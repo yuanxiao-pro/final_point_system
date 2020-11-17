@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.cust.mapper">
+
+
+   <update id="updateStuById" parameterType="student">
+      update student_table
+      <set>
+         <if test="groupId != null and groupId != ''">
+            group_id=#{groupId},
+         </if>
+
+         <if test="stu_name != null and stu_name != ''">
+            stu_name=#{stuName},
+         </if>
+      </set>
+      where stu_id=#{stuId}
+   </update>
+
+</mapper>
